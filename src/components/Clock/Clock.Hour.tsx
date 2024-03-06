@@ -1,6 +1,6 @@
 import { useClockStore } from '../../store';
 
-function Hour() {
+const Hour = () => {
   const { hoursRotation } = useClockStore((state) => state);
   return (
     <div
@@ -8,6 +8,6 @@ function Hour() {
       style={{ rotate: `${hoursRotation}deg`, bottom: '50%' }}
     />
   );
-}
+};
 
 export default Hour;

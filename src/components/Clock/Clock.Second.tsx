@@ -1,6 +1,6 @@
 import { useClockStore } from '../../store';
 
-function Second() {
+const Second = () => {
   const { secondsRotation } = useClockStore((state) => state);
   return (
     <div
@@ -8,6 +8,6 @@ function Second() {
       style={{ rotate: `${secondsRotation}deg`, bottom: '50%' }}
     />
   );
-}
+};
 
 export default Second;

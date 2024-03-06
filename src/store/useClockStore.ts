@@ -12,14 +12,14 @@ const calculateRotations = (time: Date) => {
 };
 
 export interface State {
-  time: Date;
+  currentTime: Date;
   secondsRotation: number;
   minutesRotation: number;
   hoursRotation: number;
 }
 
 type Action = {
-  setTime: () => void;
+  setCurrentTime: () => void;
   calculateRotations: () => void;
 };
 
@@ -28,19 +28,19 @@ const useClockStore = create<State & Action>((set, get) => {
   const initialRotations = calculateRotations(initialTime);
 
   return {
-    time: initialTime,
+    currentTime: initialTime,
     secondsRotation: initialRotations.secondsRotation,
     minutesRotation: initialRotations.minutesRotation,
     hoursRotation: initialRotations.hoursRotation,
 
-    setTime: () => {
+    setCurrentTime: () => {
       const newTime = new Date();
-      set({ time: newTime });
+      set({ currentTime: newTime });
       get().calculateRotations();
     },
 
     calculateRotations: () => {
-      const currentTime = get().time;
+      const currentTime = get().currentTime;
       const { secondsRotation, minutesRotation, hoursRotation } =
         calculateRotations(currentTime);
       set({

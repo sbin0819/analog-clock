@@ -1,6 +1,6 @@
 import { useClockStore } from '../../store';
 
-function Minute() {
+const Minute = () => {
   const { minutesRotation } = useClockStore((state) => state);
 
   return (
@@ -9,6 +9,6 @@ function Minute() {
       style={{ rotate: `${minutesRotation}deg`, bottom: '50%' }}
     />
   );
-}
+};
 
 export default Minute;
