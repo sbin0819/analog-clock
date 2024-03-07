@@ -14,6 +14,7 @@ const Numbers = () => {
     const yPos =
       POSITION_OFFSET +
       RADIUS_PERCENTAGE * Math.sin((Math.PI / 180) * rotation);
+
     numbers.push(
       <div
         key={i}
