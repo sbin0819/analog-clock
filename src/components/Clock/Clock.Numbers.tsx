@@ -16,6 +16,7 @@ const Numbers = () => {
       RADIUS_PERCENTAGE * Math.sin((Math.PI / 180) * rotation);
     numbers.push(
       <div
+        data-testid={`number-${i}`}
         key={i}
         className="absolute text-black font-bold text-lg"
         style={{
@@ -28,7 +29,7 @@ const Numbers = () => {
       </div>,
     );
   }
-  return <>{numbers}</>;
+  return <div data-testid="clock-numbers">{numbers}</div>;
 };
 
 export default Numbers;

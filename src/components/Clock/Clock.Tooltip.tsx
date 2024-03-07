@@ -8,6 +8,7 @@ const Tooltip = ({ position }: Props) => {
   const currentTime = useClockStore((state) => state.currentTime);
   return (
     <div
+      data-testid="clock-tooltip"
       className="absolute flex justify-center items-center bg-white text-black p-2 w-32 border border-teal-300 rounded shadow-lg"
       style={{
         left: position.x,

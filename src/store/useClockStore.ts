@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-const calculateRotations = (time: Date) => {
+export const calculateRotations = (time: Date) => {
   const seconds = time.getSeconds();
   const minutes = time.getMinutes();
   const hours = time.getHours();
