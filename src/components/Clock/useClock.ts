@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useClockStore } from '../../store';
+import { CLOCK_CONTAINER_ID } from './constant';
 
-const OFFSET_TOP = -40;
+const TOOLTIP_OFFSET_TOP = -40;
 
 const useClock = () => {
   const { setCurrentTime } = useClockStore((state) => ({
@@ -21,12 +22,12 @@ const useClock = () => {
   const handleMouseEnter = () => setTooltipVisible(true);
   const handleMouseLeave = () => setTooltipVisible(false);
   const handleMouseMove = (e: React.MouseEvent<Element, MouseEvent>) => {
-    const clockElement = document.getElementById('clock_container');
+    const clockElement = document.getElementById(CLOCK_CONTAINER_ID);
     if (!clockElement) return;
 
     const rect = clockElement.getBoundingClientRect();
     const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top + OFFSET_TOP;
+    const y = e.clientY - rect.top + TOOLTIP_OFFSET_TOP;
 
     setTooltipPosition({
       x,
