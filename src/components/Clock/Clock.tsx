@@ -13,6 +13,7 @@ const Clock = ({ children }: Props) => {
 
   return (
     <div
+      id="clock_container"
       className="relative w-64 h-64 flex justify-center items-center rounded-full bg-white border-2 border-black"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
